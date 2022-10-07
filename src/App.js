@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Head from './Components/Head';
+import Heading from './Components/Heading';
+import Filter from './Components/filtering/Filtering';
+import DataCover from './Components/Data';
 
 function App() {
+
+  const [proType,setProType]=React.useState("all");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Head />
+      <Heading />
+      <Filter setProType={setProType} />
+      <DataCover type={proType} />
     </div>
   );
 }
